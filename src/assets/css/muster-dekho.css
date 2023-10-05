@@ -1,0 +1,35 @@
+.header {
+    background: linear-gradient(to right, rgb(64, 153, 255), rgb(115, 180, 255));
+    min-height : 60px;
+}
+
+.header-link {
+    font-family: "FS Elliot Web Bold","FS Elliot Web Regular","Arial",arial,sans-serif;
+    font-weight: normal;
+    font-style: normal;
+	color :  white !important;
+}
+
+.img-logo {
+    width: 160px;
+    height: 56px;
+    margin-top: -3px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  border-bottom: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin-top: 20%;
+  margin-left: 45%;
+}

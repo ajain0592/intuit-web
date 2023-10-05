@@ -1,0 +1,184 @@
+<div *ngIf="errorMessage!=null" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="infoMessage!=null" class="alert alert-success">
+  {{ infoMessage }}
+</div>
+
+<div class="card">
+  <div class="card-header">
+      <strong>Business Profile</strong>
+  </div>
+  <div class="card-body">
+      <form [formGroup]="profileForm">
+          <div class = "row">
+            <div class="form-group col-sm-6">
+              <label for="company">Company Name</label>
+              <input type="text" formControlName="companyName" class="form-control" id="companyName" placeholder="Company Name" [ngClass]="{
+                      'is-invalid': companyName.invalid && (companyName.dirty || companyName.touched),
+                      'is-valid': companyName.valid && (companyName.dirty || companyName.touched)
+                 }">
+              <div class="invalid-feedback" *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)">
+                  <p *ngIf="companyName.errors.required">Company Name can not be empty</p>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+              <span class="required">*</span>
+              <label for="company">Legal Name</label>
+              <input type="text" formControlName="legalName" class="form-control" id="legalName" placeholder="Legal Name" [ngClass]="{
+                      'is-invalid': legalName.invalid && (legalName.dirty || legalName.touched),
+                      'is-valid': legalName.valid && (legalName.dirty || legalName.touched)
+                 }">
+              <div class="invalid-feedback" *ngIf="legalName.invalid && (legalName.dirty || legalName.touched)">
+                  <p *ngIf="legalName.errors.required">Legal Name can not be empty</p>
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class="form-group col-sm-6">
+              <span class="required">*</span>
+              <label for="addressLine1">Address Line 1</label>
+              <input type="text" formControlName="addressLine1" class="form-control" id="addressLine1" placeholder="Address Line 1" [ngClass]="{
+                      'is-invalid': addressLine1.invalid && (addressLine1.dirty || addressLine1.touched),
+                      'is-valid': addressLine1.valid && (addressLine1.dirty || addressLine1.touched)
+                 }">
+              <div class="invalid-feedback" *ngIf="addressLine1.invalid && (addressLine1.dirty || addressLine1.touched)">
+                  <p *ngIf="addressLine1.errors.required">Address Line 1 can not be empty</p>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+              <label for="addressLine2">Address Line 2</label>
+              <input type="text" formControlName="addressLine2" class="form-control" id="addressLine2" placeholder="Address Line 2" [ngClass]="{
+                'is-valid': addressLine2.valid && (addressLine2.dirty || addressLine2.touched)
+                }">
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class="form-group col-sm-3">
+              <span class="required">*</span>
+              <label for="city">City</label>
+              <input type="text" formControlName="city" class="form-control" id="city" placeholder="City" [ngClass]="{
+                      'is-invalid': city.invalid && (city.dirty || city.touched),
+                      'is-valid': city.valid && (city.dirty || city.touched)
+                 }">
+              <div class="invalid-feedback" *ngIf="city.invalid && (city.dirty || city.touched)">
+                  <p *ngIf="city.errors.required">City can not be empty</p>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-3">
+              <span class="required">*</span>
+              <label for="state">State</label>
+              <input type="text" formControlName="state" class="form-control" id="addressLine2" placeholder="State" [ngClass]="{
+                'is-invalid': state.invalid && (state.dirty || state.touched),
+                'is-valid': state.valid && (state.dirty || state.touched)
+                }">
+              <div class="invalid-feedback" *ngIf="state.invalid && (state.dirty || state.touched)">
+                  <p *ngIf="state.errors.required">State can not be empty</p>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-3">
+              <span class="required">*</span>
+              <label for="zip">Zip</label>
+              <input type="text" formControlName="zip" class="form-control" id="zip" placeholder="Zip" [ngClass]="{
+                      'is-invalid': zip.invalid && (zip.dirty || zip.touched),
+                      'is-valid': zip.valid && (zip.dirty || zip.touched)
+                 }">
+              <div class="invalid-feedback" *ngIf="zip.invalid && (zip.dirty || zip.touched)">
+                  <p *ngIf="zip.errors.required">Zip can not be empty</p>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-3">
+              <span class="required">*</span>
+              <label for="country">Country</label>
+              <input type="text" formControlName="country" class="form-control" id="country" placeholder="Country" [ngClass]="{
+                'is-invalid': country.invalid && (country.dirty || country.touched),
+                'is-valid': country.valid && (country.dirty || country.touched)
+                }">
+              <div class="invalid-feedback" *ngIf="country.invalid && (country.dirty || country.touched)">
+                  <p *ngIf="country.errors.required">Country can not be empty</p>
+              </div>
+            </div>
+
+          </div>
+
+          
+          <div class="form-group">
+            <span class="required">*</span>
+              <label for="legalAddress">Legal Address</label>
+              <input type="text" formControlName="legalAddress" maxlength="20" class="form-control" id="legalAddress" placeholder="Legal Address" [ngClass]="{
+                      'is-invalid': legalAddress.invalid && (legalAddress.dirty || legalAddress.touched),
+                      'is-valid': legalAddress.valid && (legalAddress.dirty || legalAddress.touched)
+                 }">
+              <div class="invalid-feedback" *ngIf="legalAddress.invalid && (legalAddress.dirty || legalAddress.touched)">
+                  <p *ngIf="legalAddress.errors.required">Legal Address can not be empty</p>
+              </div>
+          </div>
+
+          <div class = "row">
+            <div class="form-group col-sm-6">
+              <span class="required">*</span>
+              <label for="pan">PAN</label>
+              <input type="text" formControlName="pan" class="form-control" id="pan" placeholder="PAN" [ngClass]="{
+                      'is-invalid': pan.invalid && (pan.dirty || pan.touched),
+                      'is-valid': pan.valid && (pan.dirty || pan.touched)
+                 }">
+              <div class="invalid-feedback" *ngIf="pan.invalid && (pan.dirty || pan.touched)">
+                  <p *ngIf="pan.errors.required">PAN can not be empty</p>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+              <span class="required">*</span>
+              <label for="ein">EIN</label>
+              <input type="text" formControlName="ein" class="form-control" id="ein" placeholder="EIN" [ngClass]="{
+                      'is-invalid': ein.invalid && (ein.dirty || ein.touched),
+                      'is-valid': ein.valid && (ein.dirty || ein.touched)
+                 }">
+              <div class="invalid-feedback" *ngIf="ein.invalid && (ein.dirty || ein.touched)">
+                  <p *ngIf="ein.errors.required">EIN can not be empty</p>
+              </div>
+            </div>
+          </div>
+
+          <div class = "row">
+            <div class="form-group col-sm-6">
+              <span class="required">*</span>
+              <label for="email">Email</label>
+              <input type="text" formControlName="email" class="form-control" id="email" placeholder="Email" [ngClass]="{
+                      'is-invalid': email.invalid && (email.dirty || email.touched),
+                      'is-valid': email.valid && (email.dirty || email.touched)
+                 }">
+              <div class="invalid-feedback" *ngIf="email.invalid && (email.dirty || email.touched)">
+                  <p *ngIf="email.errors.required">Email can not be empty</p>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-6">
+              <label for="website">WebSite</label>
+              <input type="text" formControlName="website" class="form-control" id="website" placeholder="Website">
+            </div>
+          </div>
+
+      </form>
+  </div>
+  <div class="card-footer">
+      <div class="row footer-btn-grp">
+          <div class="footer-btn">
+              <button type="submit" class="btn btn-sm btn-primary" (click)="editButtonClicked()">
+              <i class="fa fa-pencil-square-o"></i> Edit</button>
+          </div>
+          <div class="footer-btn" >
+              <button type="submit" class="btn btn-sm btn-primary" (click)="saveButtonClicked()" [disabled]="(profileForm.pristine || profileForm.invalid)">
+              <i class="fa fa-paper-plane-o"></i> Save</button>
+          </div>
+      </div>
+  </div>
+</div>

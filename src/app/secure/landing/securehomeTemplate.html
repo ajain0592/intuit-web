@@ -1,0 +1,96 @@
+<!-- Header Start-->
+<app-header [fixed]="true" [asideMenuToggler]="false" [mobileAsideMenuToggler]="false" [sidebarToggler]="'lg'">
+  <ul class="nav navbar-nav ml-auto name-wrap">
+    <li class="nav-item dropdown setting-abs" dropdown placement="bottom right">
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+        dropdownToggle (click)="(false)">
+        <i class="icon-settings" style="font-size: x-large"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+        <div class="dropdown-header text-center"><strong>Settings</strong></div>
+        <a class="dropdown-item" href="#" [routerLink]="['/home/logout']">
+          <i class="icon-lock text-danger"></i> Logout</a>
+      </div>
+    </li>
+  </ul>
+</app-header>
+<!-- Header End -->
+
+<div class="app-body">
+  <app-sidebar [fixed]="true" [display]="'lg'">
+    <app-sidebar-nav [navItems]="secNavItems" [perfectScrollbar] [disabled]="sidebarMinimized"></app-sidebar-nav>
+    <app-sidebar-minimizer></app-sidebar-minimizer>
+  </app-sidebar>
+  <!-- Main content -->
+  <main class="main">
+
+    <ol class="breadcrumb">
+      <app-breadcrumb></app-breadcrumb>
+    </ol>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-lg-3">
+          <a (click)="userSelect('quickBooks')">
+            <div class="card text-white mb-3 role-card green-role"
+              style="max-width: 18rem;">
+              <div class="card-header green-role">
+                <h5 class="card-title ">Quick books</h5>
+              </div>
+              <div class="card-body">
+                Click to go to Quick Books App
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-sm-3 col-lg-3">
+          <a (click)="userSelect('tSheet')">
+            <div class="card text-white mb-3 role-card red-role"
+              style="max-width: 18rem;">
+              <div class="card-header red-role">
+                <h5 class="card-title ">T Sheets</h5>
+              </div>
+              <div class="card-body">
+                Click to go to T Sheets App
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-sm-3 col-lg-3">
+          <a (click)="userSelect('businessProfile')">
+            <div class="card text-white mb-3 role-card blue-role"
+              style="max-width: 18rem;">
+              <div class="card-header blue-role">
+                <h5 class="card-title ">Business Profile</h5>
+              </div>
+              <div class="card-body">
+                Click to view Business Profile
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-sm-3 col-lg-3">
+          <a (click)="userSelect('viewrequest')">
+            <div class="card text-white mb-3 role-card green-role"
+              style="max-width: 18rem;">
+              <div class="card-header green-role">
+                <h5 class="card-title ">View Status</h5>
+              </div>
+              <div class="card-body">
+                Click to view Profile Update Requests
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+    
+    <!-- /.container-fluid -->
+  </main>
+</div>
+
+<!-- <footerComponent></footerComponent> -->

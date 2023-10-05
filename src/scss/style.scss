@@ -1,0 +1,188 @@
+// If you want to override variables do it here
+@import "variables";
+// If you want to add something do it here
+@import "custom";
+// Import styles
+@import "node_modules/@coreui/coreui/scss/coreui";
+@import "../../node_modules/angular-calendar/css/angular-calendar.css";
+.main-header {
+  background-color: steelblue;
+}
+
+.required {
+  color: red;
+}
+
+.modal-body {
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+}
+
+.modal-open {
+  overflow: inherit;
+  padding-right: 0 !important;
+}
+
+@media (max-width: 991.98px) {
+  .app-header .navbar-brand {
+    position: absolute;
+    left: 50px;
+    margin-left: 0;
+    width: 40px;
+  }
+}
+
+// .card-body {
+//   overflow: visible !important;
+// }
+.breadcrumb-item.active {
+  font-weight: bold;
+}
+
+.breadcrumb-item a {
+  font-weight: bold;
+}
+
+.breadcrumb-item::before {
+  font-weight: bold;
+}
+
+// Footer Button layout CSS
+.footer-btn-grp {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 15px;
+  .footer-btn {
+    display: inline-flex;
+    margin-right: 5px;
+  }
+}
+
+// For keeping space between icon and text
+.card-footer {
+  i {
+    margin-right: 5px;
+  }
+}
+
+// ::ng-deep th,
+// ::ng-deep td {
+//     white-space: nowrap
+// }
+.smart-table-list {
+  overflow: auto;
+  width: 100%;
+}
+
+.name-wrap {
+  margin: 0px auto;
+  li {
+    label {
+      margin-bottom: 0px;
+      font-weight: bold;
+      font-size: 20px;
+      color: #2176b7;
+      @media (max-width: 767px) {
+        max-width: 200px;
+        font-size: 12px;
+      }
+    }
+    &.setting-abs {
+      position: absolute;
+      right: 10px;
+    }
+    &.academic-session {
+      position: absolute;
+      right: 45px;
+      .academic-session-icon-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #73818f;
+        border-radius: 4px;
+        padding: 2px 5px;
+        .academic-session-name {
+          font-weight: bold;
+          font-size: large;
+          margin-left: 5px;
+          margin-right: 3px;
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+        @media (max-width: 767px) {
+          border: none;
+        }
+        .arrow-down {
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.dailogBoxInput {
+  color: black;
+  font-weight: 700;
+}
+
+ng-select.ng-invalid.ng-touched .ng-select-container {
+  border-color: #dc3545;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px #fde6e8;
+}
+
+.app-header .nav-item {
+  min-width: 0;
+}
+
+.setting-abs {
+  position: absolute;
+  right: 10px;
+}
+
+.selected-academic-session {
+  // background-color: #2176b7;
+  background-color: #f0f3f5;
+  // color: white !important;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ng2-smart-action {
+  text-decoration: none !important;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.44, rgb(122, 153, 217)),
+    color-stop(0.72, rgb(73, 125, 189)),
+    color-stop(0.86, #2176b7)
+  );
+}
+
+// Fixed ng2-smart-table checkbox size bug , https://github.com/akveo/ng2-smart-table/issues/1090
+ng2-smart-table  input[type="checkbox"] {
+    height: 1.1em !important;
+    min-width: 1.1em !important;
+	max-width: 100% !important;
+    display: unset;
+    vertical-align: middle;
+}

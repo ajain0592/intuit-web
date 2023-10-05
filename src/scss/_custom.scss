@@ -1,0 +1,41 @@
+// Here you can add other styles
+$theme-colors: ( 'primary': #2176b7, 'primarydark': #1e6aa3, 'blue': #20a8d8, 'light_blue': #63c2de, 'indigo': #6610f2, 'purple': #6f42c1, 'pink': #e83e8c, 'red': #f86c6b, 'orange': #f8cb00, 'yellow': #ffc107, 'green': #4dbd74, 'teal': #20c997, 'cyan': #17a2b8);
+.app {
+    @extend .app;
+    // background: #3E5151;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to top, #DECBA4, #3E5151);  /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to top, #DECBA4, #3E5151); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: white;
+    // background: #ECE9E6;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to bottom, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.btn-info {
+    @extend .btn-info;
+    background-color: map-get($theme-colors, 'primary');
+}
+
+@keyframes fadein {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: blue;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+ng2-smart-table table {
+    min-width: fit-content;
+}
+
+.card-body {
+    @extend .card-body;
+    overflow: auto;
+}
